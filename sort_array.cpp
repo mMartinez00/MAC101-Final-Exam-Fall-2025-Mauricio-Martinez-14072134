@@ -100,6 +100,7 @@ int main()
 
       
     }
+    // If no swaps occured during pass, the array is already sorted
     if(!swapped) break;
   }
 
