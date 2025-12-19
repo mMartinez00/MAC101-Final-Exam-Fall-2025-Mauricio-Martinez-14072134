@@ -2,8 +2,8 @@
  * CS101 Final Exam - File 1: sort_array.cpp
  * The Logic Test: Sorting an Array
  *
- * Student Name: ________________________
- * Date: ________________________
+ * Student Name: Mauricio Martinez
+ * Date: 12/18/25
  *
  * OBJECTIVE:
  * Write a program that sorts an array of 100 integers in ascending order.
@@ -27,6 +27,10 @@
 #include <iostream>
 using namespace std;
 
+void bubbleSort() {
+
+}
+
 int main()
 {
   // An unsorted array of numbers 1-100 for you to sort
@@ -42,8 +46,16 @@ int main()
       33, 100, 57, 20, 87, 43, 8, 76, 40, 62,
       28, 90, 55, 17, 79, 4, 64, 2, 53, 60};
 
+  // Initialize array_length variable and assign numbers array length
+  int array_length = sizeof(numbers) / sizeof(numbers[0]);
+
   // TODO: Display the array BEFORE sorting
   cout << "Array before sorting:" << endl;
+
+  // Print numebrs array before sorting
+  for(int i = 0; i < array_length; i++) {
+    cout << numbers[i] << endl;
+  }
   // Hint: Use a loop to print the first 10-20 elements from the numbers array
   // Example approach: for(int i = 0; i < 10; i++) { cout << numbers[i] << " "; }
 
@@ -67,8 +79,35 @@ int main()
   //     }
   // }
 
+  // Initializing loop bounds
+  for(int i = 0; i < array_length - 1; i++) {
+    // Assume array hasnt been sorted
+    bool swapped = false;
+
+    // Loop through unsorted portion of array
+    for(int j = 0; j < array_length - i - 1; j++) {
+      
+      // If left side is larger than right side (ascending sort)
+      if(numbers[j] > numbers[j+1]) {
+        // declare temp variable to swap values
+        int temp;
+        swapped = true;
+        // Move larger int to the right
+        temp = numbers[j];
+        numbers[j] = numbers[j+1];
+        numbers[j+1] = temp;
+      }
+
+      
+    }
+    if(!swapped) break;
+  }
+
   // TODO: Display the array AFTER sorting
   cout << "\nArray after sorting:" << endl;
+  for(int i = 0; i < array_length; i++) {
+    cout << numbers[i] << endl;
+  }
   // Hint: Print the first 10-20 elements to verify they're now in order (should be 1, 2, 3, ...)
 
   return 0;
