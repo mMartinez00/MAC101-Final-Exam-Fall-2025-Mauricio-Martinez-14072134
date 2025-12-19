@@ -2,8 +2,8 @@
  * CS101 Final Exam - File 2: bmi_calculator.cpp
  * The Tool Test: BMI Calculator
  *
- * Student Name: ________________________
- * Date: ________________________
+ * Student Name: Mauricio Martinez
+ * Date: 12/18/25
  *
  * OBJECTIVE:
  * Create an interactive program that calculates a user's Body Mass Index (BMI).
@@ -40,6 +40,9 @@ int main()
   // TODO: Declare variables for weight, height, and BMI
   // Use 'double' so you can handle decimal values
   // Hint: You'll need three double variables
+  double weight;
+  double height;
+  double BMI;
 
   // TODO: Greet the user and explain what the program does
   cout << "Welcome to the BMI Calculator!" << endl;
@@ -49,15 +52,27 @@ int main()
   // TODO: Ask for the user's weight in kilograms
   // Hint: Use cout to ask the question, then cin to store the answer in your weight variable
 
+  // Get user input for weight in kg
+  cout << "Enter your weight in kilograms: ";
+  cin >> weight;
+
   // TODO: Ask for the user's height in meters
   // Hint: Same pattern as weight - ask with cout, capture with cin
+
+  // Get user input for user height in meters
+  cout << "Enter your height in meters: ";
+  cin >> height;
 
   // TODO: Calculate the BMI
   // Formula: BMI = weight / (height × height)
   // Hint: Divide weight by height squared. Remember to use * for multiplication in C++
 
+  // Get BMI using formula
+  BMI = weight / (height * height);
+
   // TODO: Display the result
   // Hint: Use cout to display a message and the bmi variable
+  cout << "Your BMI is : " << BMI;
 
   // BONUS TODO: Add if-else statements to tell the user their BMI category
   // THINK ABOUT:
@@ -71,6 +86,17 @@ int main()
   // } else if(bmi is less than second threshold) {
   //     tell user second category
   // } ... continue for all categories
+
+  // If statements to display message
+  if(BMI < 18.5) {
+    cout << "You are under weight";
+  } else if (BMI > 18.5 && BMI < 24.9) {
+    cout << "You are normal weight";
+  } else if (BMI > 25 && BMI < 29.9) {
+    cout << "You are overweight";
+  } else if (BMI >= 30) {
+    cout << "You are obese";
+  }
 
   cout << "\nThank you for using the BMI Calculator!" << endl;
 
